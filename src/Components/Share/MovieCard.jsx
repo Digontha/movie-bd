@@ -6,21 +6,24 @@ const MovieCard = ({ movie }) => {
         <>
 
 
-            <div className=" bg-white border h-[650px] border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className=" bg-[#9d723d] text-white border lg:h-[650px] border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img className="rounded-t-lg" src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" />
                 </a>
-                <div className="p-5 flex justify-between h-[300px]">
+                <div className="p-5 flex flex-col lg:flex-row justify-between h-[100px]">
 
-                    <div>
-                        <h5 className="mb-2 text-xl font-bold tracking-tight  text-gray-900 dark:text-white">{title}</h5>
+                    <div className="w-[200px]">
+                        <h5 className="mb-2 lg:text-xl text-xs font-bold tracking-tight   truncate">
+                            {title.slice(0, 40)}
+                        </h5>
                     </div>
 
                     <div className="">
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{vote_average}</p>
+                        <p className="mb-3 font-normal ">{vote_average}</p>
                     </div>
 
                 </div>
+
             </div>
 
         </>

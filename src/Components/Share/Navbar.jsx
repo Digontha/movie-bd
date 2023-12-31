@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
 
-        <div className="navbar bg-red-900 lg:px-28  font-custom">
+        <div className="navbar fixed z-10 bg-[#d2b48c] lg:px-28  font-custom">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className=""><img className="w-48 h-30 " src="https://dcassetcdn.com/design_img/236622/113409/113409_2413236_236622_thumbnail.jpg" alt="" /></a>
+               
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-xl">
