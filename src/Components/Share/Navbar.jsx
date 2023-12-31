@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
     const navLinks = <>
-        <Link><li><a>Home</a></li></Link>
+        <Link to="/"><li><a>Home</a></li></Link>
         <Link><li><a>About</a></li></Link>
         <Link><li><a>Contact</a></li></Link>
     </>
@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
 
-        <div className="navbar bg-base-100 lg:px-28  font-custom">
+        <div className="navbar bg-red-900 lg:px-28  font-custom">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
