@@ -1,5 +1,6 @@
 import { IoIosRocket } from "react-icons/io";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -10,9 +11,9 @@ const Banner = () => {
             <div className="">
                 <div className="space-y-10">
               
-                    <p className="mb-5 text-3xl font-plus text-red-700 bg-white p-3 rounded-full bg-opacity-60 font-bold">Free Feel To Enjoy Our Website.....</p>
+                    <p className="mb-5 lg:text-3xl font-plus text-red-700 bg-white p-3 rounded-full bg-opacity-60 font-bold">Free Feel To Enjoy Our Website.....</p>
                    <div className="">
-                   <button className="btn btn-outline text-white bg-red-800"><IoIosRocket></IoIosRocket> Get Started</button>
+                  <Link to="/login"> <button className="btn btn-outline text-white bg-red-800"><IoIosRocket></IoIosRocket> Get Started</button></Link>
                     <button className="btn btn-outline  text-black bg-white  ml-6"><MdOutlineWorkspacePremium></MdOutlineWorkspacePremium>Latest</button>
                    </div>
                 </div>

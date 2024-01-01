@@ -1,5 +1,7 @@
-import Banner from "../../Share/Banner";
-import Category from "../../Share/Category";
+
+import Banner from "../../../Share/Banner";
+import Category from "../../../Share/Category";
+
 
 const Home = () => {
     return (
