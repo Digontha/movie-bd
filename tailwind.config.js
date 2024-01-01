@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         custom: ['Agbalumo', 'sans-serif'],
+        monster:['Montserrat', 'sans-serif'],
       },
     },
     daisyui: {

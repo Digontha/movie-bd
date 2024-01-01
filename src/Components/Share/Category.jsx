@@ -20,7 +20,7 @@ const Category = () => {
 
         <>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 lg:gap-10 gap-2 lg:px-[2%] my-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 lg:gap-10 gap-2 lg:px-[2%] my-5">
                 {
                     movies?.map(movie => <MovieCard key={movie?.id} movie={movie}></MovieCard>)
                 }
