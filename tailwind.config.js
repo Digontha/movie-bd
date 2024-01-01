@@ -9,7 +9,9 @@ export default {
       fontFamily: {
         custom: ['Agbalumo', 'sans-serif'],
         monster:['Montserrat', 'sans-serif'],
+        plus:['M PLUS Rounded 1c', 'sans-serif'],
       },
+      
     },
     daisyui: {
       themes: ["light", "dark", "cupcake"],
