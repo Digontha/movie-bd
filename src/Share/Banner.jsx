@@ -5,19 +5,19 @@ import { Link, NavLink } from "react-router-dom";
 const Banner = () => {
     const links = <>
         <NavLink className={({ isActive, isPending }) =>
-            isPending ? "" : isActive ? "bg-green-500 px-3 p-3  text-black ml-5" : "bg-red-700 px-3 p-3  ml-5"
+            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-black ml-5" : "bg-red-700 px-3 lg:p-3 p-1  ml-5"
         } to="/">
            <button className=" lg:w-[100px] w-[58px]  mx-auto">All</button>
         </NavLink>
 
         <NavLink className={({ isActive, isPending }) =>
-            isPending ? "" : isActive ? "bg-green-500 px-3 p-3  text-black ml-5" : "bg-red-700 px-3 p-3  ml-5"
+            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-black ml-5" : "bg-red-700 px-3 lg:p-3 p-1  ml-5"
         } to="/trending">
            <button className=" lg:w-[100px] w-[58px] mx-auto">Trending</button>
         </NavLink>
 
         <NavLink className={({ isActive, isPending }) =>
-            isPending ? "" : isActive ? "bg-green-500 px-3 p-3  text-black ml-5" : "bg-red-700 px-3 p-3  ml-5"
+            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-black ml-5" : "bg-red-700 px-3 lg:p-3 p-1  ml-5"
         } to="/toprated">
            <button className=" lg:w-[100px] w-[58px] mx-auto">Top Rated</button>
         </NavLink>
@@ -40,7 +40,7 @@ const Banner = () => {
                 </div>
             </div>
 
-            <div className="menu font-plus menu-horizontal text-[16px] font-semibold gap-3">
+            <div className="menu font-plus menu-horizontal text-[12px] font-semibold gap-3">
 
                 {links}
 
