@@ -28,7 +28,7 @@ const MovieCard = ({ movie }) => {
             <div className="p-5 flex flex-col lg:flex-row justify-between h-[100px]">
                 <div className="w-[100px]">
                     <h5 className="mb-2 lg:text-xl text-xs font-bold tracking-tight truncate">
-                        {title.slice(0, 40)}
+                        {title}
                     </h5>
                 </div>
                 <div className="">
