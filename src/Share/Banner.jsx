@@ -40,7 +40,7 @@ const Banner = () => {
                 </div>
             </div>
 
-            <div className="menu font-plus menu-horizontal text-[12px] font-semibold gap-3">
+            <div className="menu font-plus menu-horizontal text-[12px] lg:text-[16px] font-semibold gap-3">
 
                 {links}
 

@@ -6,7 +6,17 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
 
-    const {user , logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(() => {
+
+            })
+    }
 
     const navLinks = <>
         <NavLink to="/" className={({ isActive, isPending }) =>
@@ -21,17 +31,9 @@ const Navbar = () => {
             isPending ? "" : isActive ? "bg-white px-3  rounded text-black" : "bg-red-700 px-3  rounded"
         }><li><p>Contact</p></li></NavLink>
 
-        
+
     </>
-   const handleLogOut = () => {
-    logOut()
-        .then(() => {
 
-        })
-        .catch(() => {
-
-        })
-}
 
     return (
 
@@ -45,7 +47,8 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <div>
+                <div className="flex items-center gap-2">
+                    <img src="/public/video-camera-icon-png.png" className="w-8 h-8" alt="" />
                     <p className="text-xl font-plus">CHOBI</p>
                 </div>
             </div>
@@ -53,19 +56,39 @@ const Navbar = () => {
                 <ul className="menu font-plus menu-horizontal text-[16px] font-semibold gap-3">
                     {navLinks}
                 </ul>
+            </div>
+
+            <div className="hidden lg:flex">
                 {
                     user ?
 
                         <div className="dropdown dropdown-bottom dropdown-end">
                             <label tabIndex={0} ><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></label>
                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box lg:w-52">
-                                <p className="font-semibold">{user.displayName}</p>
-                                <Link><button onClick={handleLogOut} className="btn  btn-outline btn-sm">Sign out</button></Link>
+                                <p className="font-semibold text-black">{user.displayName}</p>
+                                <Link><button onClick={handleLogOut} className="btn  btn-outline btn-sm mt-3">Sign out</button></Link>
                             </ul>
                         </div>
 
                         :
-                        <Link to="/login"><button className="btn  btn-outline btn-sm">Login</button></Link>
+                        <Link to="/login"><button className="btn  btn-outline btn-sm text-white ">Login</button></Link>
+                }
+            </div>
+
+            <div className="navbar-end lg:hidden">
+                {
+                    user ?
+
+                        <div className="dropdown dropdown-bottom dropdown-end">
+                            <label tabIndex={0} ><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></label>
+                            <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 rounded-box lg:w-52">
+                                <p className="font-semibold text-black ">{user.displayName}</p>
+                                <Link><button onClick={handleLogOut} className="btn btn-outline btn-sm w-full text-[10px] mt-3">Sign out</button></Link>
+                            </ul>
+                        </div>
+
+                        :
+                        <Link to="/login"><button className="btn  btn-outline btn-sm text-white">Login</button></Link>
                 }
             </div>
 

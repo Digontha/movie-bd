@@ -62,25 +62,25 @@ const Register = () => {
                    <label className="label">
                      <span className="label-text text-white text-2xl">Name</span>
                    </label>
-                   <input type="text" placeholder="name" name="name" className="input input-bordered"  />
+                   <input type="text" placeholder="name" name="name" className="input input-bordered text-black"  />
                  </div>
                  <div className="form-control">
                    <label className="label">
                      <span className="label-text text-white text-2xl">Image</span>
                    </label>
-                   <input type="text" placeholder="Image URL" name="image" className="input input-bordered"  />
+                   <input type="text" placeholder="Image URL" name="image" className="input input-bordered text-black"  />
                  </div>
                  <div className="form-control">
                    <label className="label">
                      <span className="label-text text-white text-2xl">Email</span>
                    </label>
-                   <input type="email" placeholder="email" name="email" className="input input-bordered" required />
+                   <input type="email" placeholder="email" name="email" className="input input-bordered text-black" required />
                  </div>
                  <div className="form-control">
                    <label className="label">
                      <span className="label-text text-white text-2xl">Password</span>
                    </label>
-                   <input type="password" placeholder="password" name="password" className="input input-bordered" required />
+                   <input type="password" placeholder="password" name="password" className="input input-bordered text-black" required />
                    
                  </div>
                  <div className="form-control mt-6">

@@ -64,7 +64,7 @@ const Login = () => {
                 <label className="label ">
                   <span className="label-text text-white text-2xl" >Password</span>
                 </label>
-                <input type="password" placeholder="password" name="password" className="input input-bordered" required />
+                <input type="password" placeholder="password" name="password" className="input input-bordered text-black" required />
 
               </div>
               <div className="form-control mt-6">
