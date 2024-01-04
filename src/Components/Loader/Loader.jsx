@@ -1,9 +1,9 @@
-import React from 'react';
+
 
 const Loader = () => {
     return (
-        <div className='flex flex-col justify-center items-center min-h-screen'>
-            <span className="loading loading-bars loading-lg"></span>
+        <div className='flex justify-center items-center h-screen z-50'>
+            <span className="loading text-red-600 loading-bars loading-lg"></span>
         </div>
     );
 };

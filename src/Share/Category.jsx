@@ -21,7 +21,8 @@ const Category = () => {
 
         <>
 
-            {movies?.length == 0 ? <Loader></Loader>
+            {
+            movies?.length < 1 ? <Loader></Loader>
                 :
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 lg:gap-10 gap-2 lg:px-[2%] my-5">
                     {
