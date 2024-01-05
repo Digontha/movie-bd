@@ -10,12 +10,22 @@ const Category = () => {
     const [movies, setMovies] = useState([]);
     console.log(movies);
 
+    const [currentPage, setCurrentPage] =useState(1);
 
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=ceb836801d754447d4c89925b2dda930`)
+        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=ceb836801d754447d4c89925b2dda930&page=${currentPage}`)
             .then(data => setMovies(data.data.results))
-    }, [])
+    }, [currentPage])
 
+    const handlePrevClick = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const handleNextClick = () => {
+        setCurrentPage(currentPage + 1);
+    };
 
     return (
 
@@ -30,6 +40,12 @@ const Category = () => {
                     }
                 </div>
             }
+
+            <div className="flex justify-center gap-10">
+                <button onClick={handlePrevClick}  className="btn btn-neutral hover:bg-red-600">Prev</button>
+                     <p className="text-2xl font-mono font-medium border-red-600 rounded-full p-3 border-2">Page: {currentPage}</p>
+                <button onClick={handleNextClick} className="btn btn-neutral hover:bg-red-600">Next</button>
+            </div>
 
         </>
 
