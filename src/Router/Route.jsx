@@ -6,8 +6,9 @@ import Contact from "../Components/Pages/Contact/Contact";
 import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Register.jsx/Register";
 import Trending from "../Components/Trending/Trending";
-import Popular from "../Components/Popular/Popular";
 import TopRated from "../Components/TopRated/TopRated";
+
+
 
 const router = createBrowserRouter([
     {
@@ -31,10 +32,6 @@ const router = createBrowserRouter([
             element:<Trending></Trending>
         },
         {
-            path: "/popular",
-            element:<Popular></Popular>
-        },
-        {
             path: "/toprated",
             element:<TopRated></TopRated>
         },
@@ -48,6 +45,7 @@ const router = createBrowserRouter([
             path: "/register",
             element:<Register></Register>
         },
+        
       ]
     },
   ]);

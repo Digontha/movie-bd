@@ -4,6 +4,7 @@ import { FaStar, FaPlayCircle } from 'react-icons/fa';
 
 const MovieCard = ({ movie }) => {
     const { poster_path, title, vote_average } = movie || {};
+  
     const [isHovered, setHovered] = useState(false);
 
     return (
