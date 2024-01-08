@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import img from "../../public/video-camera-icon-png.png"
+import img from "../../public/CHOBI.jpg"
 
 const Navbar = () => {
 
@@ -48,7 +48,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex items-center gap-2">
-                    <img src={img} className="w-8 h-8" alt="" />
+                    <img src={img} className="w-12 h-12 rounded-full" alt="" />
                     <p className="text-xl font-plus">CHOBI</p>
                 </div>
             </div>

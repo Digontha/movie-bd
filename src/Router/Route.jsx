@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         {
             path: "/movieDetails/:id",
             element:<MovieDetails></MovieDetails>,
-            loader:({params})=>fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=ceb836801d754447d4c89925b2dda930&language=en-US`)
+            loader:({params})=>fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=ceb836801d754447d4c89925b2dda930&language=en-US&append_to_response=videos`)
         },
         
         {
