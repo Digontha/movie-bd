@@ -9,8 +9,8 @@ const TopRated = () => {
     console.log(movies);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchQuery,setSearchQuery]= useState('');
-    const [loading,setLoading] = useState(true);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=ceb836801d754447d4c89925b2dda930&language=en-US&page=${currentPage}`)
@@ -51,9 +51,9 @@ const TopRated = () => {
                     placeholder="Search movies..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="p-2 border border-red-500 rounded-md"
+                    className="p-2 border border-red-500 rounded-md outline-none"
                 />
-                <button onClick={handleSearch} className="btn btn-neutral ml-2">Search</button>
+                <button onClick={handleSearch} className="btn btn-neutral rounded-none bg-red-600 text-white border-none ml-2">Search</button>
             </div>
 
             {loading ? <Loader /> :
@@ -63,12 +63,11 @@ const TopRated = () => {
                         {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
                     </div>
             }
-
-            <div className="flex justify-center gap-10">
+            {movies.length < 1 ? "" : <div className="flex justify-center gap-10">
                 <button onClick={handlePrevClick} className="btn btn-neutral hover:bg-red-600">Prev</button>
                 <p className="lg:text-2xl text-[16px] bg-red-600 bg-opacity-20 font-mono font-medium border-red-600 rounded-full p-3 border-2">Page: {currentPage}</p>
                 <button onClick={handleNextClick} className="btn btn-neutral hover:bg-red-600">Next</button>
-            </div>
+            </div>}
 
         </>
     );

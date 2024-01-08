@@ -13,21 +13,21 @@ const Banner = () => {
 
     const links = <>
         <NavLink className={({ isActive, isPending }) =>
-            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-black ml-5 " : "bg-red-700 px-3 lg:p-3 p-1  ml-5"
+            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-white ml-5 " : "bg-red-700 text-white px-3 lg:p-3 p-1  ml-5"
         } to="/">
-           <button onClick={reload}  className=" lg:w-[100px] w-[58px]  mx-auto">All</button>
+           <button className=" lg:w-[100px] w-[58px]  mx-auto">All</button>
         </NavLink>
 
         <NavLink className={({ isActive, isPending }) =>
-            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-black ml-5" : "bg-red-700 px-3 lg:p-3 p-1  ml-5"
+            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-white ml-5" : "bg-red-700 text-white px-3 lg:p-3 p-1  ml-5"
         } to="/trending">
-           <button onClick={reload}  className=" lg:w-[100px] w-[58px] mx-auto">Trending</button>
+           <button className=" lg:w-[100px] w-[58px] mx-auto">Trending</button>
         </NavLink>
 
         <NavLink className={({ isActive, isPending }) =>
-            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-black ml-5" : "bg-red-700 px-3 lg:p-3 p-1  ml-5"
+            isPending ? "" : isActive ? "bg-green-500 px-3 lg:p-3 p-1  text-white ml-5" : "bg-red-700 text-white px-3 lg:p-3 p-1  ml-5"
         } to="/toprated">
-           <button onClick={reload}  className=" lg:w-[100px] w-[58px] mx-auto">Top Rated</button>
+           <button className=" lg:w-[100px] w-[58px] mx-auto">Top Rated</button>
         </NavLink>
     </>
     return (
