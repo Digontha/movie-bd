@@ -5,9 +5,9 @@ import { Link, NavLink } from "react-router-dom";
 const Banner = () => {
 
 
-    const reload = () => {
-        window.location.reload()
-    } 
+    // const reload = () => {
+    //     window.location.reload()
+    // } 
 
 
 

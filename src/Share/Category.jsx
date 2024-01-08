@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import Loader from "../Components/Loader/Loader";
 
+
 const Category = () => {
     const [movies, setMovies] = useState([]);
     console.log(movies);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
     const [loading, setLoading] = useState(true);
+   
 
     useEffect(() => {
         setLoading(true);
@@ -35,6 +37,7 @@ const Category = () => {
             .then(data => {
                 setMovies(data.data.results);
                 setLoading(false);
+
             })
     };
 
@@ -53,7 +56,11 @@ const Category = () => {
 
             {loading ? <Loader /> :
                 movies.length < 1 ?
-                    <p className='text-center text-xl my-20'>No movies found</p> :
+                    <div>
+                        <p className='text-center text-xl my-20'>No movies found</p>
+                        <p onClick={() => window.location.reload()} className="cursor-pointer text-center w-32 mx-auto bg-red-700 p-3 rounded-md text-xl text-white font-medium">Go Back</p>
+                    </div>
+                    :
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 lg:gap-10 gap-2 lg:px-[2%] my-5">
                         {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
                     </div>

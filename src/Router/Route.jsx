@@ -7,6 +7,7 @@ import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Register.jsx/Register";
 import Trending from "../Components/Trending/Trending";
 import TopRated from "../Components/TopRated/TopRated";
+import MovieDetails from "../Components/Details/MovieDetails";
 
 
 
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
         {
             path: "/toprated",
             element:<TopRated></TopRated>
+        }
+        ,
+        {
+            path: "/movieDetails/:id",
+            element:<MovieDetails></MovieDetails>,
+            loader:({params})=>fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=ceb836801d754447d4c89925b2dda930&language=en-US`)
         },
         
         {
