@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -13,10 +14,11 @@ export default {
       },
       
     },
-    daisyui: {
-      themes: ["light", "dark", "cupcake"],
-    },
+  
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 }
 

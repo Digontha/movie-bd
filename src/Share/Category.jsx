@@ -68,7 +68,7 @@ const Category = () => {
 
             {movies.length < 1 ? "" : <div className="flex justify-center gap-10">
                 <button onClick={handlePrevClick} className="btn btn-neutral hover:bg-red-600">Prev</button>
-                <p className="lg:text-2xl text-[16px] bg-red-600 bg-opacity-20 font-mono font-medium border-red-600 rounded-full p-3 border-2">Page: {currentPage}</p>
+                <p className="lg:text-2xl text-[16px] dark:text-white bg-red-600 bg-opacity-20 font-mono font-medium border-red-600 rounded-full p-3 border-2">Page: {currentPage}</p>
                 <button onClick={handleNextClick} className="btn btn-neutral hover:bg-red-600">Next</button>
             </div>}
         </>

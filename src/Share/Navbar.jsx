@@ -1,8 +1,11 @@
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import img from "../../public/CHOBI.jpg"
+import useTheme from "../Hooks/useTheme";
+import { FiSun } from "react-icons/fi";
+import { LuMoonStar } from "react-icons/lu";
 
 const Navbar = () => {
 
@@ -16,7 +19,10 @@ const Navbar = () => {
             .catch(() => {
 
             })
+
     }
+
+    const { handleModeChange, mode } = useTheme();
 
     const navLinks = <>
         <NavLink to="/" className={({ isActive, isPending }) =>
@@ -31,13 +37,29 @@ const Navbar = () => {
             isPending ? "" : isActive ? "bg-white px-3  rounded text-black" : "bg-red-700 px-3  rounded"
         }><li><p>Contact</p></li></NavLink>
 
+<div className="ml-2">
+              {mode === "light" ? (
+                <LuMoonStar
+                  onClick={handleModeChange}
+                  size={27}
+                  className="cursor-pointer mr-2 lg:mr-0 dark:text-white"
+                />
+              ) : (
+                <FiSun
+                  onClick={handleModeChange}
+                  size={27}
+                  className="cursor-pointer mr-2 lg:mr-0 dark:text-white"
+                />
+              )}
+            </div>
+
 
     </>
-
+   
 
     return (
 
-        <div className="navbar text-white bg-opacity-95 md:fixed md: z-10 bg-[#001F3F] lg:px-20  ">
+        <div className="navbar text-white bg-opacity-95 md:fixed md: z-10 dark:bg-[#282828] bg-[#001F3F] lg:px-20  ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
