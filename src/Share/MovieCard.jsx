@@ -12,13 +12,13 @@ const MovieCard = ({ movie }) => {
         <>
             <Link to={`/movieDetails/${id}`}>
                 <div
-                    className="relative hover:bg-opacity-40 cursor-pointer p-1 bg-[#8B0B0B] text-white border lg:h-[350px] border-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                    className="relative hover:bg-opacity-40 cursor-pointer p-1 bg-[#8B0B0B] text-white border lg:h-[350px]  rounded-xl shadow dark:bg-gray-800 dark:border-gray-700"
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                 >
                     <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
                         <img
-                            className="transition duration-300 ease-in-out hover:scale-110"
+                            className="transition duration-300 ease-in-out hover:scale-110 rounded-xl"
                             src={`https://image.tmdb.org/t/p/w500${poster_path}`}
                             alt=""
                         />
