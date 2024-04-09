@@ -52,7 +52,7 @@ const Login = () => {
 
         <div className='flex flex-col justify-center items-center min-h-screen'  style={{ backgroundImage: 'url(https://fandomwire.com/wp-content/uploads/2018/08/Movies-background.png)' }}>
           <h1 className="text-2xl font-semibold py-3">Login</h1>
-          <div className="card lg:w-[600px] text-white p-5  shadow-2xl bg-[#001F3F] bg-opacity-95">
+          <div className="card lg:w-[600px] text-white p-5  shadow-2xl bg-[#001F3F] dark:bg-[#282828] bg-opacity-95">
             <form onSubmit={handleLogin} className="card-body ">
               <div className="form-control text-white">
                 <label className="label">

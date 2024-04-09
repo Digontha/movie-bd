@@ -51,7 +51,7 @@ const Category = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="p-2 border border-red-500 rounded-md outline-none dark:bg-[#282828]"
                 />
-                <button onClick={handleSearch} className="btn btn-neutral rounded-none rounded-xl bg-red-600 text-white border-none ml-2">Search</button>
+                <button onClick={handleSearch} className="btn btn-neutral rounded-xl bg-red-600 text-white border-none ml-2">Search</button>
             </div>
 
             {loading ? <Loader /> :
