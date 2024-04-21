@@ -44,15 +44,15 @@ const Navbar = () => {
         }><li className="dropdown dropdown-hover"><div tabIndex={0} className="m-1">Genre</div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                     {
-                        genre.map(gen=><><li><a>{gen.name}</a></li></>)
+                        genre.map(gen=><div key={gen.id}><li><a>{gen.name}</a></li></div>)
                     }
                     
                 </ul>
             </li></NavLink>
 
-        <NavLink to="/contact" className={({ isActive, isPending }) =>
+        {/* <NavLink to="/contact" className={({ isActive, isPending }) =>
             isPending ? "" : isActive ? "bg-white px-3 dark:bg-[#2D2842]  dark:text-white  rounded text-black" : "bg-red-700 px-3  text-black rounded dark:bg-white"
-        }><li><p>Contact</p></li></NavLink>
+        }><li><p>Contact</p></li></NavLink> */}
 
         <div className="ml-2">
 
@@ -87,10 +87,10 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <div className="flex items-center gap-2">
+                <a href="/" className="flex items-center gap-2">
                     <img src={img} className="w-12 h-12 rounded-full" alt="" />
                     <p className="text-xl font-plus">CHOBI</p>
-                </div>
+                </a>
             </div>
             <div className="navbar-end hidden lg:flex ">
                 <ul className="menu font-plus menu-horizontal text-[16px] font-semibold gap-3">
