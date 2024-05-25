@@ -1,2 +1,2 @@
 -- Working on 🚀
-live preview: https://chobi-movies.netlify.app
+live preview: https://movie-chobi-auth.web.app
