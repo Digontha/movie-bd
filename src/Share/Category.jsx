@@ -49,7 +49,7 @@ const Category = () => {
                     placeholder="Search movies..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="p-2 border border-red-500 rounded-md outline-none dark:bg-[#282828]"
+                    className="p-2 border border-red-500 rounded-md outline-none dark:bg-[#282828] dark:text-white"
                 />
                 <button onClick={handleSearch} className="btn btn-neutral rounded-xl bg-red-600 text-white border-none ml-2">Search</button>
             </div>
@@ -61,15 +61,15 @@ const Category = () => {
                         <p onClick={() => window.location.reload()} className="cursor-pointer text-center w-32 mx-auto bg-red-700 p-3 rounded-md text-xl text-white font-medium">Go Back</p>
                     </div>
                     :
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 lg:gap-10 gap-2 lg:px-[2%] my-5">
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 lg:gap-10 gap-2 lg:px-[2%] my-5">
                         {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
                     </div>
             }
 
             {movies.length < 1 ? "" : <div className="flex justify-center gap-10">
-                <button onClick={handlePrevClick} className="btn btn-neutral hover:bg-red-600">Prev</button>
+                <button onClick={handlePrevClick} className="btn bg-gradient-to-b from-red-500 to-white">Prev</button>
                 <p className="lg:text-2xl text-[16px] dark:text-white bg-red-600 bg-opacity-20 font-mono font-medium border-red-600 rounded-full p-3 border-2">Page: {currentPage}</p>
-                <button onClick={handleNextClick} className="btn btn-neutral hover:bg-red-600">Next</button>
+                <button onClick={handleNextClick} className="btn  bg-gradient-to-b from-red-500 to-white">Next</button>
             </div>}
         </>
     );

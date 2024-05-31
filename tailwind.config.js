@@ -8,11 +8,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['Agbalumo', 'sans-serif'],
-        monster:['Montserrat', 'sans-serif'],
-        plus:['M PLUS Rounded 1c', 'sans-serif'],
+        poppins: "'Poppins', sans-serif",
+        roboto: "'Roboto', sans-serif",
+        instrumentSans: "Instrument Sans, sans-serif",
+        tiroBangla: "Tiro Bangla , sans-serif",
+        hindSiliguri: "Hind Siliguri , sans-serif",
+        jakartaSans: "Plus Jakarta Sans , sans-serif",
+        oswald: "Oswald , sans-serif",
+        brittany: "Brittany, sans-serif",
       },
-      
     },
   
   },

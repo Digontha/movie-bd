@@ -12,7 +12,7 @@ const MovieCard = ({ movie }) => {
         <>
             <Link to={`/movieDetails/${id}`}>
                 <div
-                    className="relative hover:bg-opacity-40 cursor-pointer p-1 bg-[#8B0B0B] text-white border lg:h-[350px]  rounded-xl shadow dark:bg-gray-800 dark:border-gray-700"
+                    className="relative hover:bg-opacity-40 cursor-pointer p-1 btn bg-gradient-to-b from-red-500 to-[#140808] text-white border h-full  rounded-xl shadow dark:bg-gray-800 dark:border-gray-700"
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                 >
@@ -29,15 +29,15 @@ const MovieCard = ({ movie }) => {
                         )}
                     </div>
 
-                    <div className="p-5 flex flex-col lg:flex-row justify-between h-[100px]">
+                    <div className=" flex items-center justify-between my-2">
                         <div className="w-[100px]">
-                            <h5 className="mb-2 lg:text-xl text-xs font-bold tracking-tight truncate">
+                            <h5 className="text-[20px] font-bold tracking-tight truncate">
                                 {title}
                             </h5>
                         </div>
                         <div className="">
-                            <p className="mb-3 font-normal flex items-center">
-                                <FaStar /> {vote_average}
+                            <p className="font-normal flex gap-1 items-center">
+                                <FaStar /> {String(vote_average).slice(0, 1)}
                             </p>
                         </div>
                     </div>

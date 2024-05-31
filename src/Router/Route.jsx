@@ -8,6 +8,7 @@ import Register from "../Components/Pages/Register.jsx/Register";
 import Trending from "../Components/Trending/Trending";
 import TopRated from "../Components/TopRated/TopRated";
 import MovieDetails from "../Components/Details/MovieDetails";
+import GenreMovie from "../Components/Genre/GenreMovie";
 
 
 
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
         {
             path: "/toprated",
             element:<TopRated></TopRated>
+        }
+        ,
+        {
+            path: "/genre",
+            element:<GenreMovie></GenreMovie>
         }
         ,
         {

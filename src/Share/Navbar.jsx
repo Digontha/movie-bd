@@ -6,6 +6,8 @@ import img from "../../public/CHOBI.jpg"
 import useTheme from "../Hooks/useTheme";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import GenreMovie from "../Components/Genre/GenreMovie";
+
 
 const Navbar = () => {
 
@@ -24,29 +26,32 @@ const Navbar = () => {
 
     const { handleModeChange, mode } = useTheme();
 
-    const [genre,setGenre] = useState([]);
+    const [genre, setGenre] = useState([]);
+    const [genreId, setGenreId] = useState();
+    console.log(genreId)
+
     console.log(genre);
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=ceb836801d754447d4c89925b2dda930`)
-        .then(res=>{
-              setGenre(res.data.genres);
-        })
-    },[])
+            .then(res => {
+                setGenre(res.data.genres);
+            })
+    }, [])
 
     const navLinks = <>
         <NavLink to="/" className={({ isActive, isPending }) =>
             isPending ? "" : isActive ? "bg-white px-3 dark:bg-[#2D2842]  dark:text-white rounded text-black" : "bg-red-700 px-3 text-black dark:bg-white rounded"
         }><li><p>Home</p></li></NavLink>
 
-        <NavLink className={({ isActive, isPending }) =>
+        <NavLink to="" className={({ isActive, isPending }) =>
             isPending ? "" : isActive ? "bg-red-700 hover:bg-white px-3 dark:bg-[#2D2842]  dark:text-white  rounded text-black" : "bg-red-700 px-3  text-black dark:bg-white  rounded"
-        }><li className="dropdown dropdown-hover"><div tabIndex={0} className="m-1">Genre</div>
+        }><li   className="dropdown dropdown-hover"><div tabIndex={0} className="m-1">Genre</div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                     {
-                        genre.map(gen=><div key={gen.id}><li><a>{gen.name}</a></li></div>)
+                        genre.map(gen => <div onClick={()=>setGenreId(gen.id)}   key={gen.id}><li><a>{gen.name}</a></li></div>)
                     }
-                    
+
                 </ul>
             </li></NavLink>
 
@@ -77,62 +82,65 @@ const Navbar = () => {
 
     return (
 
-        <div className="navbar text-white bg-opacity-95 md:fixed md: z-10 dark:bg-[#282828] bg-[#001F3F] lg:px-20  ">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label>
-                    <ul tabIndex={0} className="menu font-plus menu-sm dropdown-content mt-3 z-[1] p-2 gap-3 shadow bg-base-100 rounded-box w-52 text-xl">
+        <>
+            <div className="navbar text-white bg-opacity-95 md:fixed md: z-10 dark:bg-[#282828] bg-[#001F3F] lg:px-20  ">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </label>
+                        <ul tabIndex={0} className="menu font-plus menu-sm dropdown-content mt-3 z-[1] p-2 gap-3 shadow bg-base-100 rounded-box w-52 text-xl">
+                            {navLinks}
+                        </ul>
+                    </div>
+                    <a href="/" className="flex items-center gap-2">
+                        <img src={img} className="w-12 h-12 rounded-full" alt="" />
+                        <p className="text-xl font-plus">CHOBI</p>
+                    </a>
+                </div>
+                <div className="navbar-end hidden lg:flex ">
+                    <ul className="menu font-plus menu-horizontal text-[16px] font-semibold gap-3">
                         {navLinks}
                     </ul>
                 </div>
-                <a href="/" className="flex items-center gap-2">
-                    <img src={img} className="w-12 h-12 rounded-full" alt="" />
-                    <p className="text-xl font-plus">CHOBI</p>
-                </a>
+
+                <div className="hidden lg:flex">
+                    {
+                        user ?
+
+                            <div className="dropdown dropdown-bottom dropdown-end">
+                                <label tabIndex={0} ><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></label>
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box lg:w-52">
+                                    <p className="font-semibold text-black">{user.displayName}</p>
+                                    <Link><button onClick={handleLogOut} className="btn  btn-outline btn-sm mt-3">Sign out</button></Link>
+                                </ul>
+                            </div>
+
+                            :
+                            <Link to="/login"><button className="btn  btn-outline btn-sm text-white ">Login</button></Link>
+                    }
+                </div>
+
+                <div className="navbar-end lg:hidden">
+                    {
+                        user ?
+
+                            <div className="dropdown dropdown-bottom dropdown-end">
+                                <label tabIndex={0} ><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></label>
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 rounded-box lg:w-52">
+                                    <p className="font-semibold text-black ">{user.displayName}</p>
+                                    <Link><button onClick={handleLogOut} className="btn btn-outline btn-sm w-full text-[10px] mt-3">Sign out</button></Link>
+                                </ul>
+                            </div>
+
+                            :
+                            <Link to="/login"><button className="btn  btn-outline btn-sm text-white">Login</button></Link>
+                    }
+                </div>
+
+
             </div>
-            <div className="navbar-end hidden lg:flex ">
-                <ul className="menu font-plus menu-horizontal text-[16px] font-semibold gap-3">
-                    {navLinks}
-                </ul>
-            </div>
-
-            <div className="hidden lg:flex">
-                {
-                    user ?
-
-                        <div className="dropdown dropdown-bottom dropdown-end">
-                            <label tabIndex={0} ><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></label>
-                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box lg:w-52">
-                                <p className="font-semibold text-black">{user.displayName}</p>
-                                <Link><button onClick={handleLogOut} className="btn  btn-outline btn-sm mt-3">Sign out</button></Link>
-                            </ul>
-                        </div>
-
-                        :
-                        <Link to="/login"><button className="btn  btn-outline btn-sm text-white ">Login</button></Link>
-                }
-            </div>
-
-            <div className="navbar-end lg:hidden">
-                {
-                    user ?
-
-                        <div className="dropdown dropdown-bottom dropdown-end">
-                            <label tabIndex={0} ><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></label>
-                            <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 rounded-box lg:w-52">
-                                <p className="font-semibold text-black ">{user.displayName}</p>
-                                <Link><button onClick={handleLogOut} className="btn btn-outline btn-sm w-full text-[10px] mt-3">Sign out</button></Link>
-                            </ul>
-                        </div>
-
-                        :
-                        <Link to="/login"><button className="btn  btn-outline btn-sm text-white">Login</button></Link>
-                }
-            </div>
-
-        </div>
+        </>
     );
 };
 
